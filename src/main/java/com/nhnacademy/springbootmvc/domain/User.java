@@ -5,15 +5,16 @@ import lombok.Getter;
 @Getter
 public class User {
     private final String id;
-    private final String name;
+    private final String password;
 
-    private User(String id, String name) {
+    public static User create(String id, String password) {
+        return new User(id, password);
+    }
+
+    private User(String id, String password) {
         this.id = id;
-        this.name = name;
+        this.password = password;
     }
 
-    public static User create(String id, String name) {
-        return new User(id, name);
-    }
 }
 
