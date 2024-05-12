@@ -51,16 +51,14 @@ public class UserController {
     }
 
     /** TODO 3
-     * GET /users?name={name}
-     * 이름을 request parameter 로 받아서 해당하는 유저를 조회
-     * @param name
-     * @return
+     * GET /users?id={id}
+     * id를 request parameter 로 받아서 해당하는 유저를 조회
      */
 
     /* TODO 3-1 */
     public String getUserByName(Model model,
-                                /* TODO 3-2 */String name) {
-        User user = userRepository.getUserByName(name);
+                                /* TODO 3-2 */String id) {
+        User user = userRepository.getUser(id);
         model.addAttribute("user", user);
         return "user";
     }

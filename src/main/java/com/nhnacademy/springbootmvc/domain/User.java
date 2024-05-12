@@ -2,18 +2,18 @@ package com.nhnacademy.springbootmvc.domain;
 
 import lombok.Getter;
 
+@Getter
 public class User {
-    @Getter
     private final String id;
-    @Getter
-    private final String name;
+    private final String password;
 
-    private User(String id, String name) {
+    public static User create(String id, String password) {
+        return new User(id, password);
+    }
+
+    private User(String id, String password) {
         this.id = id;
-        this.name = name;
+        this.password = password;
     }
 
-    public static User create(String id, String name) {
-        return new User(id, name);
-    }
 }

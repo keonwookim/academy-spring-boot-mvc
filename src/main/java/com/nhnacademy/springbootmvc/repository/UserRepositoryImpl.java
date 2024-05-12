@@ -27,13 +27,4 @@ public class UserRepositoryImpl implements UserRepository {
     public User getUser(String id) {
         return userMap.get(id);
     }
-
-    @Override
-    public User getUserByName(String name) {
-        return userMap.values()
-                .stream()
-                .filter(x -> x.getName().equals(name))
-                .findFirst()
-                .orElse(null);
-    }
 }
