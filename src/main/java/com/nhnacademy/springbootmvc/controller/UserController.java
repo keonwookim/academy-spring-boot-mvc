@@ -1,6 +1,7 @@
 package com.nhnacademy.springbootmvc.controller;
 
 import com.nhnacademy.springbootmvc.domain.User;
+import com.nhnacademy.springbootmvc.exception.UserNotFoundException;
 import com.nhnacademy.springbootmvc.repository.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.Objects;
 
 @Controller
 public class UserController {
@@ -28,7 +30,23 @@ public class UserController {
     public String getUser(Model model,
                           @PathVariable("userId") String id) {
         User user = userRepository.getUser(id);
+        if (Objects.isNull(user)) {
+            model.addAttribute("exception", new UserNotFoundException());
+            return "error";
+        }
         model.addAttribute("user", user);
         return "user";
+    }
+
+    @GetMapping("/{userId}/modify")
+    public String userModifyForm(@PathVariable("userId") String userId, Model model) {
+        User user = userRepository.getUser(userId);
+        if (Objects.isNull(user)) {
+            model.addAttribute("exception", new UserNotFoundException());
+            return "error";
+        }
+
+        model.addAttribute("user", user);
+        return "userModify";
     }
 }
