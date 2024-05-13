@@ -38,13 +38,11 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addInterceptor(new LocaleChangeInterceptor());
     }
 
-    // TODO #2: MultipartResolver 빈 설정
     @Bean
     public MultipartResolver multipartResolver() {
         return new StandardServletMultipartResolver();
     }
 
-    // TODO #3: upload form 설정
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/upload").setViewName("upload");
