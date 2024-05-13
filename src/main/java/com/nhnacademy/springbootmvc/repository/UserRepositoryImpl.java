@@ -1,6 +1,7 @@
 package com.nhnacademy.springbootmvc.repository;
 
 import com.nhnacademy.springbootmvc.domain.User;
+import com.nhnacademy.springbootmvc.exception.UserAlreadyExistsException;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -35,5 +36,24 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public User getUser(String id) {
         return userMap.get(id);
+    }
+
+    @Override
+    public User addUser(String id, String password) {
+        return addUser(id, password, 0);
+    }
+
+    @Override
+    public User addUser(String id, String password, int age) {
+        if (exists(id)) {
+            throw new UserAlreadyExistsException();
+        }
+
+        User user = User.create(id, password);
+        user.setAge(age);
+
+        userMap.put(id, user);
+
+        return user;
     }
 }

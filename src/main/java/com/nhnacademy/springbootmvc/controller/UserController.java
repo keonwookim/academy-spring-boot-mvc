@@ -2,14 +2,10 @@ package com.nhnacademy.springbootmvc.controller;
 
 import com.nhnacademy.springbootmvc.domain.User;
 import com.nhnacademy.springbootmvc.repository.UserRepository;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -31,14 +27,6 @@ public class UserController {
     @GetMapping("/users/{userId}")
     public String getUser(Model model,
                           @PathVariable("userId") String id) {
-        User user = userRepository.getUser(id);
-        model.addAttribute("user", user);
-        return "user";
-    }
-
-    @GetMapping("/users")
-    public String getUserByName(Model model,
-                                @RequestParam("id") String id) {
         User user = userRepository.getUser(id);
         model.addAttribute("user", user);
         return "user";

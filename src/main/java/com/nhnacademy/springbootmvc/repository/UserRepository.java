@@ -9,4 +9,7 @@ public interface UserRepository {
     boolean matches(String id, String password);
     List<User> getUsers();
     User getUser(String id);
+    User addUser(String id, String password);
+
+    User addUser(String id, String password, int age);
 }
