@@ -21,43 +21,24 @@ public class UserController {
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
-
-    // TODO: 아래 요청을 처리하는 컨트롤러 메서드를 완성
-
-    /* TODO 1
-     * GET /users
-     * 모든 저장된 멤버들을 출력
-     */
-
-    /* TODO 1-1 */
+    @GetMapping("/users")
     public String getUsers(Model model) {
         List<User> users = userRepository.getUsers();
         model.addAttribute("users", users);
         return "users";
     }
 
-    /** TODO 2
-     * GET /users/{id}
-     * id를 URL path variable 로 받아서 해당하는 유저를 조회
-     */
-
-    /* TODO 2-1 */
+    @GetMapping("/users/{userId}")
     public String getUser(Model model,
-                          /* TODO 2-2 */String id) {
+                          @PathVariable("userId") String id) {
         User user = userRepository.getUser(id);
         model.addAttribute("user", user);
         return "user";
     }
 
-    /** TODO 3
-     * GET /users?id={id}
-     * id를 request parameter 로 받아서 해당하는 유저를 조회
-     */
-
-    /* TODO 3-1 */
+    @GetMapping("/users")
     public String getUserByName(Model model,
-                                /* TODO 3-2 */String id) {
+                                @RequestParam("id") String id) {
         User user = userRepository.getUser(id);
         model.addAttribute("user", user);
         return "user";
