@@ -27,7 +27,6 @@ public class PostController {
         return postRepository.getPost(postId);
     }
 
-    // TODO #2: 게시물 조회 구현
     @GetMapping("/{postId}")
     public String viewPost(@ModelAttribute("post") Post post,
                            @PathVariable("postId") long postId,
@@ -41,7 +40,6 @@ public class PostController {
         return "postView";
     }
 
-    // TODO #3: 게시물 수정 form 구현
     @GetMapping("/{postId}/modify")
     public String postModifyForm(@ModelAttribute("post") Post post,
                                  Model model) {
