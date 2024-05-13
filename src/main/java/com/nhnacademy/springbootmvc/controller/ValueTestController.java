@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
-// TODO #3: `@Value` 활용
 @Controller
 public class ValueTestController {
     private final List<String> list;

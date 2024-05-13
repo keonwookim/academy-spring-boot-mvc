@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO #2: Java Config 파일
+// TODO #2: Java Config 파일 - @PropertySource 를 통해 properties 파일 가져오기
 @Configuration
 @PropertySource("classpath:some.properties")
 public class PropertiesConfig {

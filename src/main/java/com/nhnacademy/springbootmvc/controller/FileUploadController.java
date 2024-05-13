@@ -1,5 +1,6 @@
 package com.nhnacademy.springbootmvc.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,8 @@ public class FileUploadController {
 
     @PostMapping("/fileUpload")
     public String processUpload(@RequestParam("file") MultipartFile file,
+                                // TODO #3 `@Value` 사용해서 properties에 설정한 파일 업로드 경로 사용
+                                @Value("...") String uploadDir,
                                 Model model) throws IOException {
         file.transferTo(Paths.get(UPLOAD_DIR + file.getOriginalFilename()));
 
