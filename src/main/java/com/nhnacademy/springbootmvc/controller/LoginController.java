@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-// TODO #1: Controller로 만드세요.
 public class LoginController {
     private final UserRepository userRepository;
 

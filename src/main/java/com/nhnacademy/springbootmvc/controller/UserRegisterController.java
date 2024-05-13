@@ -19,13 +19,11 @@ public class UserRegisterController {
         this.userRepository = userRepository;
     }
 
-    // TODO #2: 사용자 등록 form 표시
     @GetMapping
     public String userRegisterForm() {
         return "userRegister";
     }
 
-    // TODO #4: 사용자 등록 처리
     @PostMapping
     public ModelAndView registerUser(@ModelAttribute UserRegisterRequest userRequest) {
         User user = userRepository.addUser(userRequest.getId(), userRequest.getPassword(), userRequest.getAge());

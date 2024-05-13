@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
+// TODO #1: UserController
+//          GET /users/{userId}          : 사용자 정보 조회
+//          GET /users/{userId}/modify   : 사용자 정보 수정 form
 @Controller
 public class UserController {
 
