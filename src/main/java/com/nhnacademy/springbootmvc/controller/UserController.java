@@ -44,7 +44,6 @@ public class UserController {
         return "user";
     }
 
-    // TODO #12: 수정 요청 처리
     @PostMapping("/users/{userId}/modify")
     public String modifyUser(@ModelAttribute User user,                                // 기존 user 정보
                              @Valid @ModelAttribute UserModifyRequest userRequest,     // 수정 요청 객체

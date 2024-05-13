@@ -6,7 +6,6 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-// TODO #1: `Validator` interface를 구현한 클래스 구현
 @Component
 public class PostRegisterRequestValidator implements Validator {
     @Override

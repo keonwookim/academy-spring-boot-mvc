@@ -41,7 +41,6 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User addUser(String id, String password) {
-        // TODO #9: 이름 기본값 추가
         return addUser(id, password, 0, "admin");
     }
 
@@ -53,14 +52,12 @@ public class UserRepositoryImpl implements UserRepository {
 
         User user = User.create(id, password);
         user.setAge(age);
-        // TODO #8: 이름 추가
         user.setName(name);
         userMap.put(id, user);
 
         return user;
     }
 
-    // TODO #14: 수정 구현
     @Override
     public void modify(User user) {
         User dbUser = getUser(user.getId());

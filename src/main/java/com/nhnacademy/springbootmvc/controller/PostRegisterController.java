@@ -17,7 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class PostRegisterController {
     private final PostRepository postRepository;
 
-    // TODO #3: `Validator` 추가
     private final PostRegisterRequestValidator validator;
 
     public PostRegisterController(PostRepository postRepository, PostRegisterRequestValidator validator) {
@@ -30,7 +29,6 @@ public class PostRegisterController {
         return "postRegister";
     }
 
-    // TODO #2: `@Valid` 또는 `@Validated` annotation 적용
     @PostMapping
     public ModelAndView registerPost(@Validated @ModelAttribute PostRegisterRequest postRequest,
                                      BindingResult bindingResult) {
@@ -46,7 +44,6 @@ public class PostRegisterController {
         return mav;
     }
 
-    // TODO #3: `@InitBinder`를 통해 Validator 지정
     @InitBinder("postRegisterRequest")
     protected void initBinder(WebDataBinder binder) {
         binder.addValidators(validator);

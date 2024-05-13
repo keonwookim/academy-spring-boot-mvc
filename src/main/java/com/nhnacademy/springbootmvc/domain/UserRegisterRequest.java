@@ -8,6 +8,5 @@ public class UserRegisterRequest {
     String password;
     int age;
 
-    // TODO #3: 이름 필드 추가
     String name;
 }
