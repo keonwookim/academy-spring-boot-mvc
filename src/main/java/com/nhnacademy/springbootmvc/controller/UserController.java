@@ -37,8 +37,7 @@ public class UserController {
                           @PathVariable("userId") String id) {
         User user = userRepository.getUser(id);
         if (Objects.isNull(user)) {
-            model.addAttribute("exception", new UserNotFoundException());
-            return "error";
+            throw new UserNotFoundException();
         }
         model.addAttribute("user", user);
         return "user";
