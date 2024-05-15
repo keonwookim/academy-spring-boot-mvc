@@ -24,7 +24,6 @@ public class PostRegisterController {
         return "postRegister";
     }
 
-    // TODO #1: 게시물 등록 처리 구현
     @PostMapping
     public ModelAndView registerPost(@ModelAttribute PostRegisterRequest postRequest) {
         Post post = postRepository.register(postRequest.getTitle(), postRequest.getContent());
