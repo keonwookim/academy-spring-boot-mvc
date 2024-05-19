@@ -36,7 +36,7 @@ public class UserController {
         return "user";
     }
 
-    @GetMapping("/users")
+    @GetMapping(value = "/users", params = "{id}")
     public String getUserByName(Model model,
                                 @RequestParam("id") String id) {
         User user = userRepository.getUser(id);
