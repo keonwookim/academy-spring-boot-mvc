@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-// TODO #1: UserController
-//          GET /users/{userId}          : 사용자 정보 조회
-//          GET /users/{userId}/modify   : 사용자 정보 수정 form
 @Controller
 public class UserController {
 
@@ -20,14 +17,14 @@ public class UserController {
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-    @GetMapping("/users")
+    @GetMapping("/user")
     public String getUsers(Model model) {
         List<User> users = userRepository.getUsers();
         model.addAttribute("users", users);
         return "users";
     }
 
-    @GetMapping("/users/{userId}")
+    @GetMapping("/user/{userId}")
     public String getUser(Model model,
                           @PathVariable("userId") String id) {
         User user = userRepository.getUser(id);
