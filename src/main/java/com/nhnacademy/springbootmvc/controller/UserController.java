@@ -16,7 +16,7 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @GetMapping("/users")
+    @GetMapping("/user")
     public String getUsers(/* TODO 1: 적절한 모델 type 넣기 */) {
         List<User> users = userRepository.getUsers();
         //TODO 2: user 목록을 모델의 attribute 추가
