@@ -38,12 +38,9 @@ public class UserController {
         return "user";
     }
 
-    @ModelAttribute("user")
-    public User user(@PathVariable("userId") String userId) {
-        return userRepository.getUser(userId);
-    }
-    @GetMapping("/user/{userId}/modify")
-    public String userModifyForm(@ModelAttribute("user") User user, Model model) {
+    @GetMapping("/{userId}/modify")
+    public String userModifyForm(@PathVariable("userId") String userId, Model model) {
+        User user = userRepository.getUser(userId);
         if (Objects.isNull(user)) {
             model.addAttribute("exception", new UserNotFoundException());
             return "error";
