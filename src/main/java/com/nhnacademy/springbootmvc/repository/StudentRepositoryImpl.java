@@ -1,7 +1,9 @@
 package com.nhnacademy.springbootmvc.repository;
 
 import com.nhnacademy.springbootmvc.domain.Student;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class StudentRepositoryImpl implements StudentRepository {
     @Override
     public boolean exists(long id) {
