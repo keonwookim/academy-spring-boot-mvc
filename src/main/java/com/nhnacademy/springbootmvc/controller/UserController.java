@@ -17,14 +17,14 @@ public class UserController {
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-    @GetMapping("/users")
+    @GetMapping("/user")
     public String getUsers(Model model) {
         List<User> users = userRepository.getUsers();
         model.addAttribute("users", users);
         return "users";
     }
 
-    @GetMapping("/users/{userId}")
+    @GetMapping("/user/{userId}")
     public String getUser(Model model,
                           @PathVariable("userId") String id) {
         User user = userRepository.getUser(id);
