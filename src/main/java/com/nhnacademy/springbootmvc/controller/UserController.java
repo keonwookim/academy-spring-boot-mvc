@@ -38,7 +38,7 @@ public class UserController {
     }
 
     /** TODO 2
-     * GET /users/{id}
+     * GET /user/{id}
      * id를 URL path variable 로 받아서 해당하는 유저를 조회
      */
 
@@ -51,7 +51,7 @@ public class UserController {
     }
 
     /** TODO 3
-     * GET /users?id={id}
+     * GET /user?id={id}
      * id를 request parameter 로 받아서 해당하는 유저를 조회
      */
 
