@@ -26,7 +26,7 @@ public class UserController {
         return "users";
     }
 
-    @GetMapping("/users/{userId}")
+    @GetMapping("/user/{userId}")
     public String getUser(Model model,
                           @PathVariable("userId") String id) {
         User user = userRepository.getUser(id);
@@ -38,7 +38,7 @@ public class UserController {
         return "user";
     }
 
-    @GetMapping("/{userId}/modify")
+    @GetMapping("/user/{userId}/modify")
     public String userModifyForm(@PathVariable("userId") String userId, Model model) {
         User user = userRepository.getUser(userId);
         if (Objects.isNull(user)) {
