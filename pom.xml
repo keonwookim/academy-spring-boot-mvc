@@ -33,10 +33,7 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mustache</artifactId>
-        </dependency>
+        <!-- TODO #1 spring-boot-starter-mustache 의존성 추가 -->
 
         <dependency>
             <groupId>org.projectlombok</groupId>

@@ -9,12 +9,14 @@ public class HomeController {
 
     @GetMapping("/")
     public String index() {
-        return "index";
+        // TODO #3 적절한 thymeleaf view 반환
+        return "";
     }
 
     @GetMapping("/mustache")
     public String mustacheIndex(Model model) {
         model.addAttribute("message", "Hello World!");
-        return "mustache/index";
+        // TODO #4 적절한 mustache view 반환
+        return "";
     }
 }
