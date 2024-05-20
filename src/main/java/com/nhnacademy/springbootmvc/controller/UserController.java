@@ -32,7 +32,7 @@ public class UserController {
         return "users";
     }
 
-    @GetMapping("/users/{userId}")
+    @GetMapping("/user/{userId}")
     public String getUser(Model model,
                           @PathVariable("userId") String id) {
         User user = userRepository.getUser(id);
@@ -45,7 +45,7 @@ public class UserController {
     }
 
     // TODO #12: 수정 요청 처리
-    @PostMapping("/users/{userId}/modify")
+    @PostMapping("/user/{userId}/modify")
     public String modifyUser(@ModelAttribute User user,                                // 기존 user 정보
                              @Valid @ModelAttribute UserModifyRequest userRequest,     // 수정 요청 객체
                              BindingResult bindingResult,
