@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/users/register")
+@RequestMapping("/user/register")
 public class UserRegisterController {
     private final UserRepository userRepository;
 
