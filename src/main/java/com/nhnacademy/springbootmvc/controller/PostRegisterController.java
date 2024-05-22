@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/posts/register")
+@RequestMapping("/post/register")
 public class PostRegisterController {
     private final PostRepository postRepository;
 
