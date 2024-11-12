@@ -39,7 +39,7 @@ public class PostRegisterControllerTest {
     @Test
     void testValidation() {
         Throwable th = catchThrowable(() ->
-                        mockMvc.perform(post("/posts/register")
+                        mockMvc.perform(post("/post/register")
                               .param("title", "")
                               .param("content", ""))
                       .andDo(print()));

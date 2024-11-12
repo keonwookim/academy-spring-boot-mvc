@@ -46,7 +46,7 @@ public class UserControllerTest {
         User user = User.create("admin", "12345");
         when(userRepository.getUser(anyString())).thenReturn(user);
 
-        MvcResult mvcResult = mockMvc.perform(get("/users/{userId}", "admin"))
+        MvcResult mvcResult = mockMvc.perform(get("/user/{userId}", "admin"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("user"))
                 .andReturn();
@@ -64,7 +64,7 @@ public class UserControllerTest {
     void testUserNotExists() throws Exception {
         when(userRepository.getUser(anyString())).thenReturn(null);
 
-        Throwable th = catchThrowable(() -> mockMvc.perform(get("/users/{userId}", "admin")));
+        Throwable th = catchThrowable(() -> mockMvc.perform(get("/user/{userId}", "admin")));
 
         assertThat(th).isInstanceOf(ServletException.class)
                 .hasCauseInstanceOf(UserNotFoundException.class);
