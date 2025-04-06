@@ -38,7 +38,7 @@ public class UserController {
         return "user";
     }
 
-    @GetMapping("/{userId}/modify")
+    @GetMapping("/user/{userId}/modify")
     public String userModifyForm(@PathVariable("userId") String userId, Model model) {
         User user = userRepository.getUser(userId);
         if (Objects.isNull(user)) {
