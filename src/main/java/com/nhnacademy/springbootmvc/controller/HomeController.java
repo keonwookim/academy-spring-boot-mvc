@@ -19,4 +19,10 @@ public class HomeController {
         model.addAttribute("role", role);
         return "role";
     }
+
+    //TODO 3: isStudent 를 request parameter 로 받아서 출력하도록 구현
+    @GetMapping("/converter2")
+    public String converter2() {
+
+    }
 }

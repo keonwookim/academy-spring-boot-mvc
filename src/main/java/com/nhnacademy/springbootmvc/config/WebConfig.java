@@ -9,5 +9,6 @@ public class WebConfig implements WebMvcConfigurer {
     public void addFormatters(FormatterRegistry registry) {
         WebMvcConfigurer.super.addFormatters(registry);
         registry.addConverter(new StringToRoleConverter());
+        //TODO 2: StringToBoolean converter 등록
     }
 }
