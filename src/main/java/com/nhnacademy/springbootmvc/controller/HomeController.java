@@ -1,7 +1,10 @@
 package com.nhnacademy.springbootmvc.controller;
 
+import com.nhnacademy.springbootmvc.model.Role;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -9,5 +12,11 @@ public class HomeController {
     @GetMapping("/")
     public String index() {
         return "index";
+    }
+
+    @GetMapping("/converter")
+    public String converter(@RequestParam("role") Role role, Model model) {
+        model.addAttribute("role", role);
+        return "role";
     }
 }
