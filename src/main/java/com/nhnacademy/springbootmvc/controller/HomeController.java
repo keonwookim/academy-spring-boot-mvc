@@ -33,5 +33,7 @@ public class HomeController {
 
     //TODO 2: request parameter 로 money 를 받아서 출력하는 메서드 구현
     @GetMapping("/money")
-    public String money()
+    public String money(){
+        return null;
+    }
 }
