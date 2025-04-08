@@ -11,5 +11,6 @@ public class WebConfig implements WebMvcConfigurer {
         WebMvcConfigurer.super.addFormatters(registry);
         registry.addConverter(new StringToRoleConverter());
         registry.addFormatter(new LocalDateFormatter());
+        //TODO 2: MoneyFormatter 등록
     }
 }
