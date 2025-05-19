@@ -1,7 +1,9 @@
 package com.nhnacademy.springbootmvc.controller;
 
+import com.nhnacademy.springbootmvc.domain.Post;
 import com.nhnacademy.springbootmvc.domain.User;
 import com.nhnacademy.springbootmvc.domain.UserModifyRequest;
+import com.nhnacademy.springbootmvc.exception.PostNotFoundException;
 import com.nhnacademy.springbootmvc.exception.UserNotFoundException;
 import com.nhnacademy.springbootmvc.exception.ValidationFailedException;
 import com.nhnacademy.springbootmvc.repository.UserRepository;
@@ -42,6 +44,19 @@ public class UserController {
         }
         model.addAttribute("user", user);
         return "user";
+    }
+
+    @GetMapping("/user/{userId}/modify")
+    public String userModifyForm(Model model,
+                                 @PathVariable("userId") String id) {
+        User user = userRepository.getUser(id);
+        if (Objects.isNull(user)) {
+            model.addAttribute("exception", new UserNotFoundException());
+            return "error";
+        }
+
+        model.addAttribute("user", user);
+        return "userModify";
     }
 
     // TODO #12: 수정 요청 처리
