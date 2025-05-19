@@ -46,7 +46,7 @@ public class PostRegisterController {
         return mav;
     }
 
-    // TODO #3: `@InitBinder`를 통해 Validator 지정
+    // TODO #4: `@InitBinder`를 통해 Validator 지정
     @InitBinder("postRegisterRequest")
     protected void initBinder(WebDataBinder binder) {
         binder.addValidators(validator);

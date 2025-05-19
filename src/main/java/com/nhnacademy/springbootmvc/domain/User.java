@@ -14,7 +14,6 @@ public class User {
     @Setter
     private int age;
 
-    // TODO #2: 이름 필드 추가
     @Getter
     @Setter
     private String name;
@@ -32,7 +31,6 @@ public class User {
     public static User constructPasswordMaskedUser(User user) {
         User newUser = User.create(user.getId(), MASK);
         newUser.setAge(user.getAge());
-        // TODO #10: 이름 추가
         newUser.setName(user.getName());
         return newUser;
     }
