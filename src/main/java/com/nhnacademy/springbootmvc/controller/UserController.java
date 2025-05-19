@@ -44,6 +44,18 @@ public class UserController {
         return "user";
     }
 
+    @GetMapping("/user/{userId}/modify")
+    public String modifyUserForm(Model model,
+                                  @PathVariable("userId") String id) {
+        User user = userRepository.getUser(id);
+        if (Objects.isNull(user)) {
+            model.addAttribute("exception", new UserNotFoundException());
+            return "error";
+        }
+        model.addAttribute("user", user);
+        return "userModify";
+    }
+
     // TODO #12: 수정 요청 처리
     @PostMapping("/user/{userId}/modify")
     public String modifyUser(@ModelAttribute User user,                                // 기존 user 정보
